@@ -2,10 +2,10 @@
 Library         RequestsLibrary
 
 *** Variables ***
-
+#No Variables
 
 *** Keywords ***
-
+#No Keywords
 
 *** Test Cases ***
 API_1 Get all user ids with status code 200
