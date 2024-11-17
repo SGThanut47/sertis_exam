@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20241117 23:31:05.697" rpa="false" schemaversion="3">
+<suite id="s1" name="Q2" source="C:\Users\Thanut\Desktop\Hello World\Work\Coding\RobotFramework\Practice\sertis\q2\q2.robot">
+<test id="s1-t1" name="API_1 Get all user ids with status code 200" line="11">
+<kw name="Create Session">
+<arg>accessSession</arg>
+<arg>https://sertis-qa.glitch.me/</arg>
+<msg timestamp="20241117 23:31:05.739" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20241117 23:31:05.739" endtime="20241117 23:31:05.739"/>
+</kw>
+<kw name="GET On Session">
+<var>${resp}</var>
+<arg>accessSession</arg>
+<arg>/user/ids</arg>
+<arg>expected_status=200</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.742" endtime="20241117 23:31:05.742"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.743" endtime="20241117 23:31:05.743"/>
+</kw>
+<status status="FAIL" starttime="20241117 23:31:05.735" endtime="20241117 23:31:05.743">No keyword with name 'Create Session' found.</status>
+</test>
+<test id="s1-t2" name="API_2 Get user information for the specified user id with status code 200" line="16">
+<kw name="Create Session">
+<arg>accessSession</arg>
+<arg>https://sertis-qa.glitch.me/</arg>
+<msg timestamp="20241117 23:31:05.748" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20241117 23:31:05.748" endtime="20241117 23:31:05.748"/>
+</kw>
+<kw name="GET On Session">
+<var>${resp}</var>
+<arg>accessSession</arg>
+<arg>/user/001</arg>
+<arg>expected_status=200</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.751" endtime="20241117 23:31:05.751"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.752" endtime="20241117 23:31:05.752"/>
+</kw>
+<status status="FAIL" starttime="20241117 23:31:05.745" endtime="20241117 23:31:05.753">No keyword with name 'Create Session' found.</status>
+</test>
+<test id="s1-t3" name="API_3 Sign in by specifying &quot;phone_no&quot; and &quot;otp&quot; of a particular user id in a request body with status code 200" line="21">
+<kw name="Create Session">
+<arg>accessSession</arg>
+<arg>https://sertis-qa.glitch.me/</arg>
+<msg timestamp="20241117 23:31:05.758" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20241117 23:31:05.758" endtime="20241117 23:31:05.758"/>
+</kw>
+<kw name="GET On Session">
+<var>${resp}</var>
+<arg>accessSession</arg>
+<arg>/user/001</arg>
+<arg>expected_status=200</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.760" endtime="20241117 23:31:05.761"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()['phone_no']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.761" endtime="20241117 23:31:05.761"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()['otp']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.761" endtime="20241117 23:31:05.761"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${put_request_body}</var>
+<arg>phone_no=${resp.json()['phone_no']}</arg>
+<arg>otp=${resp.json()['otp']}</arg>
+<arg>status=decreased</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.761" endtime="20241117 23:31:05.762"/>
+</kw>
+<kw name="POST On Session">
+<var>${put_resp}</var>
+<arg>accessSession</arg>
+<arg>/signin</arg>
+<arg>json=${put_request_body}</arg>
+<arg>expected_status=200</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.763" endtime="20241117 23:31:05.763"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${put_resp.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.763" endtime="20241117 23:31:05.764"/>
+</kw>
+<status status="FAIL" starttime="20241117 23:31:05.754" endtime="20241117 23:31:05.764">No keyword with name 'Create Session' found.</status>
+</test>
+<test id="s1-t4" name="API_4 Get all user ids with status code 500" line="30">
+<kw name="Create Session">
+<arg>accessSession</arg>
+<arg>https://sertis-qa.glitch.me/</arg>
+<msg timestamp="20241117 23:31:05.772" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20241117 23:31:05.772" endtime="20241117 23:31:05.772"/>
+</kw>
+<kw name="GET On Session">
+<var>${resp}</var>
+<arg>accessSession</arg>
+<arg>/user/ids</arg>
+<arg>expected_status=500</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.776" endtime="20241117 23:31:05.776"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.777" endtime="20241117 23:31:05.777"/>
+</kw>
+<status status="FAIL" starttime="20241117 23:31:05.767" endtime="20241117 23:31:05.777">No keyword with name 'Create Session' found.</status>
+</test>
+<test id="s1-t5" name="API_5 Get user information for the specified user id with status code 400" line="36">
+<kw name="Create Session">
+<arg>accessSession</arg>
+<arg>https://sertis-qa.glitch.me/</arg>
+<msg timestamp="20241117 23:31:05.784" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20241117 23:31:05.784" endtime="20241117 23:31:05.784"/>
+</kw>
+<kw name="GET On Session">
+<var>${resp}</var>
+<arg>accessSession</arg>
+<arg>/user/003</arg>
+<arg>expected_status=400</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.787" endtime="20241117 23:31:05.787"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.788" endtime="20241117 23:31:05.788"/>
+</kw>
+<status status="FAIL" starttime="20241117 23:31:05.779" endtime="20241117 23:31:05.788">No keyword with name 'Create Session' found.</status>
+</test>
+<test id="s1-t6" name="API_6 Get user information for the specified user id with status code 500" line="41">
+<kw name="Create Session">
+<arg>accessSession</arg>
+<arg>https://sertis-qa.glitch.me/</arg>
+<msg timestamp="20241117 23:31:05.793" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20241117 23:31:05.793" endtime="20241117 23:31:05.793"/>
+</kw>
+<kw name="GET On Session">
+<var>${resp}</var>
+<arg>accessSession</arg>
+<arg>/user/001</arg>
+<arg>expected_status=500</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.796" endtime="20241117 23:31:05.796"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.797" endtime="20241117 23:31:05.797"/>
+</kw>
+<status status="FAIL" starttime="20241117 23:31:05.790" endtime="20241117 23:31:05.798">No keyword with name 'Create Session' found.</status>
+</test>
+<test id="s1-t7" name="API_7 Sign in by specifying &quot;phone_no&quot; and &quot;otp&quot; of a particular user id in a request body with status code 404" line="47">
+<kw name="Create Session">
+<arg>accessSession</arg>
+<arg>https://sertis-qa.glitch.me/</arg>
+<msg timestamp="20241117 23:31:05.803" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20241117 23:31:05.803" endtime="20241117 23:31:05.803"/>
+</kw>
+<kw name="GET On Session">
+<var>${resp}</var>
+<arg>accessSession</arg>
+<arg>/user/001</arg>
+<arg>expected_status=200</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.806" endtime="20241117 23:31:05.806"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()['phone_no']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.806" endtime="20241117 23:31:05.806"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()['otp']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.806" endtime="20241117 23:31:05.806"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${put_request_body}</var>
+<arg>phone_no=${resp.json()['phone_no']}123</arg>
+<arg>otp=${resp.json()['otp']}123</arg>
+<arg>status=decreased</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.807" endtime="20241117 23:31:05.807"/>
+</kw>
+<kw name="POST On Session">
+<var>${put_resp}</var>
+<arg>accessSession</arg>
+<arg>/signin</arg>
+<arg>json=${put_request_body}</arg>
+<arg>expected_status=404</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.808" endtime="20241117 23:31:05.808"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${put_resp.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.809" endtime="20241117 23:31:05.809"/>
+</kw>
+<status status="FAIL" starttime="20241117 23:31:05.800" endtime="20241117 23:31:05.809">No keyword with name 'Create Session' found.</status>
+</test>
+<test id="s1-t8" name="API_8 Sign in by specifying &quot;phone_no&quot; and &quot;otp&quot; of a particular user id in a request body with status code 500" line="57">
+<kw name="Create Session">
+<arg>accessSession</arg>
+<arg>https://sertis-qa.glitch.me/</arg>
+<msg timestamp="20241117 23:31:05.815" level="FAIL">No keyword with name 'Create Session' found.</msg>
+<status status="FAIL" starttime="20241117 23:31:05.815" endtime="20241117 23:31:05.815"/>
+</kw>
+<kw name="GET On Session">
+<var>${resp}</var>
+<arg>accessSession</arg>
+<arg>/user/001</arg>
+<arg>expected_status=200</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.818" endtime="20241117 23:31:05.818"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()['phone_no']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.819" endtime="20241117 23:31:05.819"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()['otp']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.820" endtime="20241117 23:31:05.820"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${put_request_body}</var>
+<arg>phone_no=${resp.json()['phone_no']}</arg>
+<arg>otp=${resp.json()['otp']}</arg>
+<arg>status=decreased</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.820" endtime="20241117 23:31:05.820"/>
+</kw>
+<kw name="POST On Session">
+<var>${put_resp}</var>
+<arg>accessSession</arg>
+<arg>/signin</arg>
+<arg>json=${put_request_body}</arg>
+<arg>expected_status=500</arg>
+<status status="NOT RUN" starttime="20241117 23:31:05.823" endtime="20241117 23:31:05.823"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${put_resp.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20241117 23:31:05.824" endtime="20241117 23:31:05.824"/>
+</kw>
+<status status="FAIL" starttime="20241117 23:31:05.811" endtime="20241117 23:31:05.824">No keyword with name 'Create Session' found.</status>
+</test>
+<status status="FAIL" starttime="20241117 23:31:05.700" endtime="20241117 23:31:05.826"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="8" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="8" skip="0" id="s1" name="Q2">Q2</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20241117 23:31:05.731" level="ERROR">Error in file 'C:\Users\Thanut\Desktop\Hello World\Work\Coding\RobotFramework\Practice\sertis\q2\q2.robot' on line 2: Importing library 'RequestsLibrary' failed: ModuleNotFoundError: No module named 'RequestsLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Thanut\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
+  C:\Users\Thanut\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\Thanut\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\Thanut\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\Thanut\AppData\Local\Programs\Python\Python310
+  C:\Users\Thanut\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
+</errors>
+</robot>
